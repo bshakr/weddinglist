@@ -16,8 +16,8 @@
       <h3>Guests</h3>
       <hr>
       <ul class="guests">
-      {{#each controller}}
-          {{guest-card name=name guestid=id}}
+      {{#each guest in arrangedContent}}
+          {{guest-card name=guest.name guestid=guest.id}}
       {{else}}
         <li><h4>There are no guests yet.</h4></li>
       {{/each}}

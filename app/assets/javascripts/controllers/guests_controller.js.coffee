@@ -1,6 +1,6 @@
 Weddinglist.GuestsController = Ember.ArrayController.extend
-  sortProperties: ['order'],
-  sortAscending: false,
+  sortProperties: ['order', 'id'],
+  sortAscending: false
   actions:
     addGuest: ->
       newGuest = String(@get('newGuest'))
