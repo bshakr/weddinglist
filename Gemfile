@@ -6,6 +6,8 @@ gem 'pg', '~> 0.17.1'
 gem 'active_model_serializers', '~> 0.8.1'
 gem 'rails_12factor', group: :production
 
+# Authentication
+gem 'devise', '~> 3.2.2'
 
 # Frontend
 gem 'sass-rails', '~> 4.0.0.rc1'
