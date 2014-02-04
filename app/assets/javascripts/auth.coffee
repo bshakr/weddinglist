@@ -1,7 +1,10 @@
 #=require base64
-Weddinglist.Auth = Ember.Object.create(
+Weddinglist.Auth = Ember.Object.create
   auth_token: 'hello'
-)
+  signIn: (params) ->
+    Ember.$.post('/users/sign_in', params).then (response) =>
+      @set('auth_token', response.auth_token)
+
 $.ajaxSetup(
   headers: { 'x-my-custom-header': 'some value' }
   beforeSend: (xhr, options) ->
