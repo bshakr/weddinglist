@@ -2,3 +2,4 @@
 
 Weddinglist.Router.map ()->
   @resource('guests')
+  @route 'login'
