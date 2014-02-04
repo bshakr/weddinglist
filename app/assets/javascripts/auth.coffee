@@ -4,7 +4,9 @@ Weddinglist.Auth = Ember.Object.create
   signIn: (params) ->
     Ember.$.post('/sessions', params).then (response) =>
       @set('auth_token', response.auth_token)
-
+  signup: (params) ->
+    Ember.$.post('/users', params).then (response) =>
+      @set('auth_token', response.auth_token)
 $.ajaxSetup(
   headers: { 'x-my-custom-header': 'some value' }
   beforeSend: (xhr, options) ->

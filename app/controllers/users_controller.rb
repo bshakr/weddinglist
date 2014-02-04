@@ -1,11 +1,11 @@
 class UsersController < ApplicationController
-
+  skip_before_filter :verify_authenticity_token, :only => [:create]
   def new
     @user = User.new
   end
 
   def create
-    @user = User.new(user_params)
+    @user = User.new(params)
     if @user.save
       redirect_to root_url, :notice => "Signed up!"
     else
@@ -14,8 +14,6 @@ class UsersController < ApplicationController
   end
 
   private
-    def user_params
-      params.require(:user).permit(:email, :password, :password_confirmation, :device_token)
-    end
+
 end
 
