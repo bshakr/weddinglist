@@ -4,7 +4,7 @@ class ApplicationController < ActionController::Base
   protect_from_forgery with: :exception
   
   def require_auth
-    auth_token = request.headers["auth-token"]
+    auth_token = request.headers["Authorization"]
     Rails.logger.info "auth token #{auth_token}"
     @user = User.find_by_auth_token(auth_token)
     if @user

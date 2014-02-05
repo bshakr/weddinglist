@@ -6,5 +6,6 @@ Weddinglist.SignupFormView = Ember.View.extend
   submit: (event) ->
     event.preventDefault()
     Weddinglist.Auth.signup
-      email: @get('email')
-      password: @get('password')
+      user:
+        email: @get('email')
+        password: @get('password')
