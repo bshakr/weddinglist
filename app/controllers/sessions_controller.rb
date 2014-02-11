@@ -17,7 +17,7 @@ class SessionsController < ApplicationController
         :auth_token_expires_at => @user.auth_token_expires_at
       }
     else
-      render :status => 422, :json => { :error => "Invalid credentials" }
+      render :status => 422, :json => { :errorMessage => "Invalid credentials" }
     end
 
   end

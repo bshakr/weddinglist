@@ -5,7 +5,11 @@ Weddinglist.SignupFormView = Ember.View.extend
 
   submit: (event) ->
     event.preventDefault()
-    Weddinglist.Auth.signup
+    promise = Weddinglist.Auth.signup
       user:
         email: @get('email')
         password: @get('password')
+
+    promise.then => @get('controller').send('signedIn')
+    promise.fail =>
+      @set('errorMessage', JSON.parse(response.responseText)['errorMessage'])
