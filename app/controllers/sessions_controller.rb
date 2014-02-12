@@ -1,5 +1,5 @@
 class SessionsController < ApplicationController
-  skip_before_filter :verify_authenticity_token, :only => [:create]
+  skip_before_filter :verify_authenticity_token, :only => [:create, :destroy]
   def create
     unless valid_params?
       render :status => 422, :json => { :error => "Missing values" }
@@ -24,7 +24,7 @@ class SessionsController < ApplicationController
 
   def destroy
     logout
-    redirect_to root_url, :notice => "Logged out!"
+    render :status => 200,:json => {}
   end
   private
   def user_params
