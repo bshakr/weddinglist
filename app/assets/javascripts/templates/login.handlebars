@@ -3,6 +3,11 @@
 <br/>
 <br/>
 <div class="container">
+  {{#if Weddinglist.Auth.signedIn}}
+  <div class="row"><div class="col-sm-5">
+    <div class="alert alert-success">{{Weddinglist.Auth.email}} You are already signed in!</div>
+  </div></div>
+  {{/if}}
   <div class="row">
     <div class="col-sm-5">
       {{view Weddinglist.LoginFormView}}
