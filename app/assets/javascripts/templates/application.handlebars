@@ -1,6 +1,8 @@
-<ul class="nav">
-  <li>{{#linkTo 'guests'}}Guests{{/linkTo}}</li>
-  <li>{{#linkTo 'login'}}Login{{/linkTo}}</li>
-  <li>{{#linkTo 'logout'}}Logout{{/linkTo}}</li>
-</ul>
+{{#if Weddinglist.Auth.signedIn }}
+  <ul class="nav">
+    <li>{{#linkTo 'guests'}}Guests{{/linkTo}}</li>
+    <li>{{#linkTo 'login'}}Login{{/linkTo}}</li>
+    <li>{{#linkTo 'logout'}}Logout{{/linkTo}}</li>
+  </ul>
+{{/if}}
 {{outlet}}

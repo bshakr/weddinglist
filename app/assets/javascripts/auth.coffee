@@ -1,5 +1,11 @@
 #=require base64
-Weddinglist.Auth = Ember.Object.create
+
+Auth = Ember.Object.extend
+  auth_token: null
+
+  signedIn: (->
+    @get('auth_token')
+  ).property('auth_token')
 
   signIn: (params) ->
     Ember.$.post('/sessions', params).then (response) =>
@@ -12,11 +18,16 @@ Weddinglist.Auth = Ember.Object.create
   signOut: ->
     promise = Ember.$.ajax '/sessions/destroy',
       type: 'DELETE'
+
     promise.then =>
       @set('auth_token', null)
+
+Weddinglist.Auth = Auth.create()
+
 $.ajaxSetup(
   beforeSend: (xhr, options) ->
     if Weddinglist.Auth.get('auth_token')
       header = "#{Weddinglist.Auth.get('auth_token')}"
       xhr.setRequestHeader('Authorization', header)
 )
+
