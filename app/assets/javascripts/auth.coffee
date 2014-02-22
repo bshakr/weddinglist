@@ -17,6 +17,7 @@ Auth = Ember.Object.extend
     Ember.$.post('/users', params).then (response) =>
       $.cookie('auth_token', response.auth_token)
       $.cookie('email', response.email)
+
   signOut: ->
     promise = Ember.$.ajax '/sessions/destroy',
       type: 'DELETE'

@@ -3,18 +3,20 @@ class SessionsController < ApplicationController
 
   def create
     unless valid_params?
-      render status: 422, json: { error: "Missing username or password" }
+      render status: 422, json: { errorMessage: "Missing username or password" }
+      return
     end
     @user = login(user_params[:email], user_params[:password])
-
-    if @user
-      @user.regenerate_auth_token!(31556940) if @user.auth_token_expired?
-      @user.save!
-    else
-      render :status => 422, :json => { :errorMessage => "Invalid credentials" }
+    Rails.logger.info "is user nil? #{@user.nil?}"
+    if @user.nil?
+      render status: 422, json: { errorMessage: "Invalid credentials" }
+      return
     end
 
-    render :status => 200, :json => {
+    @user.regenerate_auth_token!(31556940) if @user.auth_token_expired?
+    @user.save!
+
+    render status: 200, json: {
       auth_token: @user.auth_token,
       email: @user.email,
     }
@@ -22,7 +24,7 @@ class SessionsController < ApplicationController
 
   def destroy
     logout
-    render :status => 200,:json => {}
+    render :status => 200, json: {}
   end
 
   private

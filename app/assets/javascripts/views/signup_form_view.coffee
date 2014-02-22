@@ -11,5 +11,5 @@ Weddinglist.SignupFormView = Ember.View.extend
         password: @get('password')
 
     promise.then => @get('controller').send('signedIn')
-    promise.fail =>
-      @set('errorMessage', JSON.parse(response.responseText)['errorMessage'])
+    promise.fail (response) =>
+      @set( 'errorMessage', response.responseJSON.errorMessage )

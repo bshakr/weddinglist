@@ -12,6 +12,8 @@ Weddinglist.LoginFormView = Ember.View.extend
         email: @get('email')
         password: @get('password')
         auth_token: Weddinglist.Auth.get('auth_token')
-    promise.then => @get('controller').send('signedIn')
-    promise.fail =>
-      @set('errorMessage', JSON.parse(response.responseText)['errorMessage'])
+
+    promise.then =>
+      @get('controller').send('signedIn')
+    promise.fail (response) =>
+      @set( 'errorMessage', response.responseJSON.errorMessage )

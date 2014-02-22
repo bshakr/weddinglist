@@ -1,4 +1,9 @@
 Weddinglist.LoginRoute = Ember.Route.extend
-
+  activate: ->
+    if Weddinglist.Auth.auth_token
+      @transitionTo('guests')
   actions:
-    signedIn: -> @transitionTo('guests')
+    signedIn: ->
+      if Weddinglist.Auth.auth_token
+        console.log "inside login route signedIn"
+      @transitionTo('guests')
