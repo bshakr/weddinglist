@@ -1,0 +1,62 @@
+.new-invitation{
+    background: $light-grey;
+    padding:15px;
+    padding-right:100px;
+    border-left: 8px solid $turquoise;
+}
+
+.guest-aside {
+  .big-number{
+    font-size: 60px;
+    letter-spacing: -0.03em;
+    line-height: 1.25em;
+    font-weight: 800;
+  }
+  .total-guests{
+   color:$blue;
+  }
+  .total-reception{
+    color:$dark-turquoise;
+  }
+  .total-invitation{
+    color:$dark-orange;
+  }
+  .total-label{
+    text-transform: uppercase;
+    letter-spacing: -0.02em;
+    line-height: 1.3em;
+    font-size: 22px;
+    font-weight: 200;
+    color: $grey;
+  }
+}
+
+.guests{
+  .guest{
+    padding-top:8px;
+    padding-bottom:8px;
+    padding-left:8px;
+    background: $light-grey;
+    min-height: 60px;
+    border-left: 4px solid $blue;
+    border-radius: 2px;
+    border-top-left-radius: 0px;
+    border-bottom-left-radius: 0px;
+    margin-bottom:20px;
+    font-size: 18px;
+    font-weight:300;
+    color: $dark-grey;
+    .number-of-guests{
+      font-size: 24px;
+      font-weight: 200;
+    }
+    .name{
+      font-weight: 600;
+      color: $dark-blue;
+    }
+  }
+  .guest.reception{
+    background: $light-grey;
+    border-left: 4px solid $red;
+  }
+}

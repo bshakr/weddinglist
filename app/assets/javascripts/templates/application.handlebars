@@ -1,4 +1,4 @@
-{{#if Weddinglist.Auth.signedIn }}
+
   <div class="container">
     <nav class="navbar navbar-inverse" role="navigation">
       <div class="container-fluid">
@@ -10,20 +10,23 @@
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </button>
-          <a class="navbar-brand" href="#">Brand</a>
+          <a class="navbar-brand" href="#">Guestlist</a>
         </div>
 
         <!-- Collect the nav links, forms, and other content for toggling -->
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
           <ul class="nav navbar-nav">
-            <li>{{#link-to 'guests'}}Guests{{/link-to}}</li>
-            <li>{{#link-to 'login'}}Login{{/link-to}}</li>
-            <li>{{#link-to 'logout'}}Logout{{/link-to}}</li>
-
+            {{#if Weddinglist.Auth.signedIn }}
+              <li>{{#link-to 'guests'}}Guests{{/link-to}}</li>
+              <li>{{#link-to 'logout'}}Logout{{/link-to}}</li>
+            {{else}}
+              <li>{{#link-to 'login'}}Login{{/link-to}}</li>
+              <li>{{#link-to 'signup'}}Sign up{{/link-to}}</li>
+            {{/if}}
           </ul>
         </div><!-- /.navbar-collapse -->
       </div><!-- /.container-fluid -->
     </div>
   </nav>
-{{/if}}
+
 {{outlet}}

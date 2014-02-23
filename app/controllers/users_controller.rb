@@ -7,6 +7,8 @@ class UsersController < ApplicationController
   def create
     @user = User.new(user_params)
     if @user.save
+      @user.regenerate_auth_token!
+      @user.save
       render :status => 200, :json => {
         auth_token: @user.auth_token,
         email: @user.email

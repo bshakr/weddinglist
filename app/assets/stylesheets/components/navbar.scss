@@ -1,0 +1,16 @@
+.navbar {
+  margin-top: 20px;
+}
+.navbar-inverse{
+  background: $dark-blue;
+  a.navbar-brand{
+    color: #fff;
+  }
+  ul.nav{
+    li{
+      a{
+        color: $light-grey;
+      }
+    }
+  }
+}

@@ -16,6 +16,7 @@ Auth = Ember.Object.extend
 
   signup: (params) ->
     Ember.$.post('/users', params).then (response) =>
+      @set('auth_token', response.auth_token)
       $.cookie('auth_token', response.auth_token)
       $.cookie('email', response.email)
 

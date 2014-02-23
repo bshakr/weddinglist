@@ -1,27 +1,58 @@
 <div class="container">
   <div class="row">
-    <form action="#">
-      <fieldset>
-        <legend>New Guests</legend>
-        <div class="col-sm-4">
-            {{input type=text value=newGuest class="form-control"}}
-        </div>
-          <button class="btn btn-primary" {{action addGuest}}>Add</button>
-      </fieldset>
-    </form>
+    <div class="col-sm-6">
+      <div class="new-invitation">
+        <form action="#">
+          <fieldset>
+            <legend>Add a new invitation</legend>
+            <div class="form-group">
+              {{input type=text value=newGuest placeholder="Household name" class="form-control"}}
+            </div>
+            <div class="form-group">
+              {{input type=text value=guests placeholder="Number of guests"  class="form-control"}}
+            </div>
+            <div class="form-group">
+              {{input type="checkbox" name="reception" checked=reception}}
+              <label>Reception?</label>
+            </div>
+            <div class="form-group">
+              {{input type="checkbox" name="international" checked=international}}
+              <label>Coming from abroad?</label>
+            </div>
+            <div class="form-group">
+              <button class="btn btn-primary col-sm-5" {{action "addGuest"}}>Add</button>
+            </div>
+          </fieldset>
+        </form>
+      </div>
+    </div>
 
+    <div class="col-sm-6">
+      <div class="guest-aside">
+        <div class="col-sm-8">
+        </div>
+
+        <div class="col-sm-4">
+          <div class="total-guests big-number center">{{churchCount}}</div>
+          <div class="total-label center">Church</div>
+          <div class="total-reception big-number center">{{receptionCount}}</div>
+          <div class="total-label center">Reception</div>
+          <div class="total-invitation big-number center">{{arrangedContent.length}}</div>
+          <div class="total-label center">Invitations</div>
+        </div>
+
+      </div>
+    </div>
   </div>
+
   <div class="row">
-    <div class="col-md-4">
-      <h3>Guests</h3>
-      <hr>
-      <ul class="guests">
+    <hr>
+    <div class="guests">
       {{#each guest in arrangedContent}}
-          {{guest-card name=guest.name guestid=guest.id}}
+          {{guest-card name=guest.name numberOfGuests=guest.numberOfGuests receptionClass=guest.receptionClass}}
       {{else}}
-        <li><h4>There are no guests yet.</h4></li>
+        <div><h4>There are no guests yet.</h4></div>
       {{/each}}
-      </ul>
     </div>
   </div>
 </div>
