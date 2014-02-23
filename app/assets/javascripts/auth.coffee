@@ -10,6 +10,7 @@ Auth = Ember.Object.extend
 
   signIn: (params) ->
     Ember.$.post('/sessions', params).then (response) =>
+      @set('auth_token', response.auth_token)
       $.cookie('auth_token', response.auth_token)
       $.cookie('email', response.email)
 
