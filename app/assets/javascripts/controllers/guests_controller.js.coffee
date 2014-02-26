@@ -39,15 +39,15 @@ Weddinglist.GuestsController = Ember.ArrayController.extend
       if guestsNo == 0
         guestsNo = 1
       reception = @get('reception')
-      console.log "reception: " + reception
       international = @get('international')
-      console.log "international: " + international
+      inviter = Weddinglist.Auth.get('email')
 
       guest = @store.createRecord('guest',
         name: newGuest,
         numberOfGuests: guestsNo,
         reception: reception,
-        international: international
+        international: international,
+        inviter: inviter
       )
       guest.save()
       @set('newGuest', '')

@@ -1,5 +1,6 @@
 Weddinglist.Guest = DS.Model.extend
   name: DS.attr('string'),
+  inviter: DS.attr('string'),
   numberOfGuests: DS.attr('number'),
   reception: DS.attr('boolean', {defaultValue: false}),
   international: DS.attr('boolean', {defaultValue: false}),
