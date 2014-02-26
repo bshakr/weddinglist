@@ -19,7 +19,10 @@
     color:$dark-turquoise;
   }
   .total-invitation{
-    color:$dark-orange;
+    color:$dark-blue;
+  }
+  .total-international{
+    color: $red;
   }
   .total-label{
     text-transform: uppercase;
@@ -56,7 +59,16 @@
     }
   }
   .guest.reception{
-    background: $light-grey;
-    border-left: 4px solid $red;
+    border-left: 4px solid $turquoise;
+  }
+  .guest{
+    .international{
+      height:8px;
+      width:8px;
+      float:right;
+      border-radius:4px;
+      background: $red;
+      margin-right: 8px;
+    }
   }
 }

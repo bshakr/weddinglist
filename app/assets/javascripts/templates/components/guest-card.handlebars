@@ -1,5 +1,9 @@
 <div class="col-sm-3">
   <div class="guest {{unbound receptionClass}}">
+    {{#if international}}
+    <div class="international"></div>
+    {{/if}}
+
     <div class="name">{{name}}</div>
     <div><span class="number-of-guests">{{numberOfGuests}}</span> guests</div>
   </div>

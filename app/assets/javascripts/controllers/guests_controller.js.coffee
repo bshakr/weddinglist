@@ -12,6 +12,16 @@ Weddinglist.GuestsController = Ember.ArrayController.extend
     total
   ).property('@each')
 
+  internationalCount:(->
+    international = @filterBy('international', true)
+    total = 0
+
+    for i in international
+      total += i.get('numberOfGuests')
+
+    total
+  ).property('@each')
+
   churchCount:(->
     guests = @getEach('numberOfGuests')
     if guests.length > 0
@@ -21,6 +31,7 @@ Weddinglist.GuestsController = Ember.ArrayController.extend
     churchCount
 
   ).property('@each')
+
   actions:
     addGuest: ->
       newGuest = String(@get('newGuest'))
@@ -30,12 +41,13 @@ Weddinglist.GuestsController = Ember.ArrayController.extend
       reception = @get('reception')
       console.log "reception: " + reception
       international = @get('international')
+      console.log "international: " + international
 
       guest = @store.createRecord('guest',
         name: newGuest,
         numberOfGuests: guestsNo,
         reception: reception,
-        internation: international
+        international: international
       )
       guest.save()
       @set('newGuest', '')
