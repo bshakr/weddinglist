@@ -11,7 +11,11 @@ class GuestsController < ApplicationController
     respond_with Guest.create(guest_params)
   end
 
-
+  def destroy
+    @guest = Guest.find(params[:id])
+    @guest.destroy
+    head :no_content
+  end
   private
 
   def guest_params

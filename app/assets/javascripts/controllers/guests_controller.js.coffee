@@ -33,6 +33,12 @@ Weddinglist.GuestsController = Ember.ArrayController.extend
   ).property('@each')
 
   actions:
+    deleteGuest: (id)->
+      console.log "delete guest from controller with id : " + id
+      deletePromise = @store.find('guest', id)
+      deletePromise.then (guest)=>
+        guest.deleteRecord()
+        guest.save()
     addGuest: ->
       newGuest = String(@get('newGuest'))
       guestsNo = Number(@get('guests'))

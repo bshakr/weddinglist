@@ -1,4 +1,4 @@
-.new-invitation{
+.new-invitation {
     background: $light-grey;
     padding:15px;
     padding-right:100px;
@@ -13,19 +13,19 @@
     line-height: 1.05em;
     font-weight: 300;
   }
-  .total-guests{
+  .total-guests {
    color:$blue;
   }
-  .total-reception{
+  .total-reception {
     color:$dark-turquoise;
   }
-  .total-invitation{
+  .total-invitation {
     color:$dark-blue;
   }
-  .total-international{
+  .total-international {
     color: $red;
   }
-  .total-label{
+  .total-label {
     text-transform: uppercase;
     letter-spacing: -0.02em;
     line-height: 1.3em;
@@ -35,8 +35,9 @@
   }
 }
 
-.guests{
-  .guest{
+.guests {
+  .guest {
+    position: relative;
     padding-top:8px;
     padding-bottom:8px;
     padding-left:8px;
@@ -50,26 +51,33 @@
     font-size: 18px;
     font-weight:300;
     color: $dark-grey;
-    .number-of-guests{
+    .number-of-guests {
       font-size: 24px;
       font-weight: 200;
     }
-    .name{
+    .name {
       font-weight: 600;
       color: $dark-blue;
+    }
+    .btn-close {
+      position: absolute;
+      top:-10px;
+      right:-10px;
     }
   }
   .guest.reception{
     border-left: 4px solid $turquoise;
   }
   .guest{
-    .international{
+    .international {
       height:8px;
       width:8px;
-      float:right;
       border-radius:4px;
       background: $red;
-      margin-right: 8px;
+      position:absolute;
+      bottom:8px;
+      right:8px;
+
     }
   }
 }
