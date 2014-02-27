@@ -2,15 +2,15 @@
 <div class="alert alert-danger">{{view.errorMessage}}</div>
 {{/if}}
 <form action="#" class="login">
-<fieldset>
-  <legend>Login</legend>
-  <label>Email:</label>
-  {{input type=text value=view.email class="form-control"}}
+  <fieldset>
+    <legend>Login</legend>
+    <label>Email:</label>
+    {{input type=text value=view.email class="form-control"}}
 
-  <label>Password:</label>
-  {{input type="password" value=view.password class="form-control"}}
+    <label>Password:</label>
+    {{input type="password" value=view.password class="form-control"}}
 
-  <br/><br/>
-  <button class="btn btn-primary btn-block" type="submit">Login</button>
-</fieldset>
+    <br/>
+    <button class="btn btn-primary" type="submit">Login</button>
+  </fieldset>
 </form>
