@@ -13,15 +13,15 @@ Weddinglist.Guest = DS.Model.extend
     inviter = @get('inviter')
     url = ''
     if inviter == 'tiakharrat@gmail.com'
-      url = 'tia.jpg'
+      url = 'tia'
     else if inviter == 'aymankharrat@hotmail.co.uk'
-      url = 'ayman.jpg'
+      url = 'ayman'
     else if inviter == 'bassemreda@gmail.com'
-      url = 'bassem.jpg'
+      url = 'bassem'
     else if inviter == 'Mustardseed.eg@ gmail.com'
-      url = 'mona.jpg'
+      url = 'mona'
     else
-      url = 'rappin.jpeg'
+      url = 'rappin'
     url
   ).property('inviter')
 
