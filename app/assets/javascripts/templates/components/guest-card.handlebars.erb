@@ -1,12 +1,14 @@
 <div class="col-sm-3">
   <div class="guest {{unbound receptionClass}}">
+    <%= image_tag("/assets/{{unbound inviter}}", class: "avatar")%>
     {{#if international}}
     <div class="international"></div>
     {{/if}}
-
     <div class="name">{{name}}</div>
     <button class="btn btn-xs btn-close"{{action "deleteGuest" guestId}}>&times;</button>
 
-    <div><span class="number-of-guests">{{numberOfGuests}}</span> guests</div>
+    <div>
+      <span class="number-of-guests">{{numberOfGuests}}</span> guests
+    </div>
   </div>
 </div>

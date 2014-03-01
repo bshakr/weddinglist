@@ -34,7 +34,6 @@ Weddinglist.GuestsController = Ember.ArrayController.extend
 
   actions:
     deleteGuest: (id)->
-      console.log "delete guest from controller with id : " + id
       deletePromise = @store.find('guest', id)
       deletePromise.then (guest)=>
         guest.deleteRecord()
