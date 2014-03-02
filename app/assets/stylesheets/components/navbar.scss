@@ -2,6 +2,7 @@
   margin-top: 20px;
 }
 .navbar-inverse{
+  border-radius: 2px;
   background: $dark-turquoise;
   background: -webkit-gradient(linear, left top, left bottom, from($turquoise), to($dark-turquoise));
   border: 0px;
