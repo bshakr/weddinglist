@@ -11,7 +11,7 @@
   &:hover{
     -webkit-border-image: -webkit-gradient(linear, left top, left bottom, from(lighten($turquoise, 4%)), to(lighten($light-blue, 4%)));
     border-image-outset: 0px;
-    border-image-width:100% 0% 0% 10px;
+    border-image-width:100% 0% 0% 6px;
     border-image-repeat: stretch;
   }
 }
@@ -66,12 +66,11 @@
 
     -webkit-border-image: -webkit-gradient(linear, left top, left bottom, from($light-blue), to($blue));
     border-image-outset: 0px;
-    border-image-width:100% 0% 0% 3px;
+    border-image-width:100% 0% 0% 4px;
     border-image-repeat: stretch;
     transition: all 100ms ease-in;
 
     &:hover{
-      border-image-width:100% 0% 0% 5px;
       .name {
         color: darken($dark-blue, 10%);
       }
@@ -124,11 +123,10 @@
     border-left: 4px solid $turquoise;
     -webkit-border-image: -webkit-gradient(linear, left top, left bottom, from($turquoise), to($dark-turquoise));
     border-image-outset: 0px;
-    border-image-width:100% 0% 0% 3px;
+    border-image-width:100% 0% 0% 4px;
     border-image-repeat: stretch;
     transition: all 100ms ease-in;
     &:hover{
-      border-image-width:100% 0% 0% 5px;
       .name {
         color: darken($dark-blue, 10%);
       }
