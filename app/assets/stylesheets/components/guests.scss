@@ -1,8 +1,18 @@
 .new-invitation {
-    background: $light-grey;
-    padding:15px;
-    padding-right:100px;
-    border-left: 8px solid $turquoise;
+  background: $light-grey;
+  padding:15px;
+  padding-right:100px;
+  -webkit-border-image: -webkit-gradient(linear, left top, left bottom, from($turquoise), to($light-blue));
+  border-image-outset: 0px;
+  border-image-width:100% 0% 0% 6px;
+  border-image-repeat: stretch;
+  transition: all 200ms ease-in;
+  &:hover{
+    -webkit-border-image: -webkit-gradient(linear, left top, left bottom, from(lighten($turquoise, 4%)), to(lighten($light-blue, 4%)));
+    border-image-outset: 0px;
+    border-image-width:100% 0% 0% 10px;
+    border-image-repeat: stretch;
+  }
 }
 
 .guest-aside {
