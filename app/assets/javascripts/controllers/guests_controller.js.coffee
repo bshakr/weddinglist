@@ -1,6 +1,8 @@
 Weddinglist.GuestsController = Ember.ArrayController.extend
   sortProperties: ['name'],
-  sortAscending: true
+  sortAscending: true,
+  filterInternationals: false,
+  filterChurch: false
 
   receptionCount:(->
     reception = @filterBy('reception', true)
@@ -32,7 +34,36 @@ Weddinglist.GuestsController = Ember.ArrayController.extend
 
   ).property('@each')
 
+  filteredContent:( ->
+    content = @get('arrangedContent')
+    filterInternationals = @get('filterInternationals')
+    filterChurch = @get('filterChurch')
+    if filterInternationals
+      filteredContent = content.filter((item)->
+        item.get('international')
+      )
+    else if filterChurch
+      filteredContent = content.filter((item) ->
+        !item.get('reception')
+      )
+    else
+      filteredContent = content
+    filteredContent
+  ).property('arrangedContent', 'filterInternationals', 'filterChurch')
+
   actions:
+    filterInternationals: ->
+      @set('filterChurch', false)
+      @set('filterInternationals', true)
+
+    filterChurch: ->
+      @set('filterInternationals', false)
+      @set('filterChurch', true)
+
+    clearFilters: ->
+      @set('filterInternationals', false)
+      @set('filterChurch', false)
+
     deleteGuest: (id)->
       deletePromise = @store.find('guest', id)
       deletePromise.then (guest)=>

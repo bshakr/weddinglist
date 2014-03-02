@@ -53,8 +53,20 @@
 
   <div class="row">
     <hr>
+    <div class="col-sm-12 center">
+      <div class="btn-group">
+        <button type="button" class="btn btn-default" {{action "clearFilters"}}>All</button>
+        <button type="button" class="btn btn-default" {{action "filterInternationals"}}>International</button>
+        <button type="button" class="btn btn-default" {{action "filterChurch"}}>Church</button>
+
+      </div>
+    </div>
+    <br><br><br><br>
+  </div>
+  <div class="row">
+
     <div class="guests">
-      {{#each guest in arrangedContent}}
+      {{#each guest in filteredContent}}
           {{guest-card guestId=guest.id inviter=guest.inviterUrl name=guest.name numberOfGuests=guest.numberOfGuests receptionClass=guest.receptionClass international=guest.international}}
       {{else}}
         <div><h4>There are no guests yet.</h4></div>
