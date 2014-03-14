@@ -53,13 +53,24 @@
 
   <div class="row">
     <hr>
-    <div class="col-sm-12 center">
-      <div class="btn-group">
-        <button type="button" class="btn btn-danger" {{action "clearFilters"}}>All</button>
-        <button type="button" class="btn btn-danger" {{action "filterInternationals"}}>International</button>
-        <button type="button" class="btn btn-danger" {{action "filterChurch"}}>Church</button>
+    <div class="col-sm-12">
 
+      <div class="pull-right">
+        <a href="#" {{action "filterBassem"}}><span class="avatar bassem"></span></button>
+        <a href="#" {{action "filterTia"}}><span class="avatar tia"></span></a>
+        <a href="#" {{action "filterMona"}}><span class="avatar mona"></span></a>
+        <a href="#" {{action "filterReda"}}><span class="avatar reda-mona"></span></a>
+        <a href="#" {{action "filterAyman"}}><span class="avatar ayman"></span></a>
       </div>
+
+      <div class="center">
+        <div class="btn-group">
+          <button type="button" class="btn btn-danger" {{action "clearFilters"}}>All</button>
+          <button type="button" class="btn btn-danger" {{action "filterInternationals"}}>International</button>
+          <button type="button" class="btn btn-danger" {{action "filterChurch"}}>Church</button>
+        </div>
+      </div>
+
     </div>
     <br><br><br><br>
   </div>

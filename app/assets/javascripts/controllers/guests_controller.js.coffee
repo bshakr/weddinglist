@@ -38,6 +38,11 @@ Weddinglist.GuestsController = Ember.ArrayController.extend
     content = @get('arrangedContent')
     filterInternationals = @get('filterInternationals')
     filterChurch = @get('filterChurch')
+    filterBassem = @get('filterBassem')
+    filterTia = @get('filterTia')
+    filterReda = @get('filterReda')
+    filterMona = @get('filterMona')
+    filterAyman = @get('filterAyman')
     if filterInternationals
       filteredContent = content.filter((item)->
         item.get('international')
@@ -46,10 +51,30 @@ Weddinglist.GuestsController = Ember.ArrayController.extend
       filteredContent = content.filter((item) ->
         !item.get('reception')
       )
+    else if filterBassem
+      filteredContent = content.filter((item) ->
+        item.get('inviter') == "bassemreda@gmail.com"
+      )
+    else if filterTia
+      filteredContent = content.filter((item) ->
+        item.get('inviter') == "tiakharrat@gmail.com"
+      )
+    else if filterReda
+      filteredContent = content.filter((item) ->
+        item.get('inviter') == "redashaker@gmail.com"
+      )
+    else if filterMona
+      filteredContent = content.filter((item) ->
+        item.get('inviter') == "Mustardseed.eg@ gmail.com"
+      )
+    else if filterAyman
+      filteredContent = content.filter((item) ->
+        item.get('inviter') == "aymankharrat@hotmail.co.uk"
+      )
     else
       filteredContent = content
     filteredContent
-  ).property('arrangedContent', 'filterInternationals', 'filterChurch')
+  ).property('arrangedContent', 'filterInternationals', 'filterChurch', 'filterBassem', 'filterTia', 'filterReda', 'filterMona', 'filterAyman')
 
   actions:
     filterInternationals: ->
@@ -60,9 +85,45 @@ Weddinglist.GuestsController = Ember.ArrayController.extend
       @set('filterInternationals', false)
       @set('filterChurch', true)
 
+    filterBassem: ->
+      @set('filterBassem', true)
+      @set('filterTia', false)
+      @set('filterReda', false)
+      @set('filterAyman', false)
+      @set('filterMona', false)
+
+    filterTia: ->
+      @set('filterTia', true)
+      @set('filterBassem', false)
+      @set('filterReda', false)
+      @set('filterAyman', false)
+      @set('filterMona', false)
+
+    filterReda: ->
+      @set('filterReda', true)
+      @set('filterTia', false)
+      @set('filterBassem', false)
+      @set('filterAyman', false)
+      @set('filterMona', false)
+
+    filterMona: ->
+      @set('filterMona', true)
+      @set('filterReda', false)
+      @set('filterTia', false)
+      @set('filterBassem', false)
+      @set('filterAyman', false)
+
+    filterAyman: ->
+      @set('filterAyman', true)
+      @set('filterReda', false)
+      @set('filterTia', false)
+      @set('filterBassem', false)
+      @set('filterMona', false)
+
     clearFilters: ->
       @set('filterInternationals', false)
       @set('filterChurch', false)
+      @set('filterBassem', false)
 
     deleteGuest: (id)->
       deletePromise = @store.find('guest', id)

@@ -47,6 +47,37 @@
   }
 }
 
+
+.avatar{
+  display: inline-block;
+  width: 42px;
+  height: 42px;
+  border-radius:21px;
+  margin-right:8px;
+  float:right;
+  background: url(image_path('rappin.jpeg'));
+  background-size:100%;
+}
+.avatar.mona{
+  background: url(image_path('mona.jpg'));
+  background-size:100%;
+}
+.avatar.reda-mona{
+  background: url(image_path('reda-mona.jpg'));
+  background-size:100%;
+}
+.avatar.tia{
+  background: url(image_path('tia.jpg'));
+  background-size:100%;
+}
+.avatar.bassem{
+  background: url(image_path('bassem.jpg'));
+  background-size:100%;
+}
+.avatar.ayman{
+  background: url(image_path('ayman.jpg'));
+  background-size:100%;
+}
 .guests {
   .guest {
     position: relative;
@@ -93,36 +124,7 @@
       top:-10px;
       right:-10px;
     }
-    .avatar{
-      display: inline-block;
-      width: 42px;
-      height: 42px;
-      border-radius:21px;
-      margin-right:8px;
-      float:right;
-      background: url(image_path('rappin.jpeg'));
-      background-size:100%;
-    }
-    .avatar.mona{
-      background: url(image_path('mona.jpg'));
-      background-size:100%;
-    }
-    .avatar.reda-mona{
-      background: url(image_path('reda-mona.jpg'));
-      background-size:100%;
-    }
-    .avatar.tia{
-      background: url(image_path('tia.jpg'));
-      background-size:100%;
-    }
-    .avatar.bassem{
-      background: url(image_path('bassem.jpg'));
-      background-size:100%;
-    }
-    .avatar.ayman{
-      background: url(image_path('ayman.jpg'));
-      background-size:100%;
-    }
+
   }
   .guest.reception{
     border-left: 4px solid $turquoise;
