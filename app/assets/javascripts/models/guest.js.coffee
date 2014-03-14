@@ -19,7 +19,9 @@ Weddinglist.Guest = DS.Model.extend
     else if inviter == 'bassemreda@gmail.com'
       url = 'bassem'
     else if inviter == 'Mustardseed.eg@ gmail.com'
-      url = 'mona'
+      url = 'reda-mona'
+    else if inviter == 'redashaker@gmail.com'
+      url = 'reda-mona'
     else
       url = 'rappin'
     url
