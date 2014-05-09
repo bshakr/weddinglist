@@ -1,6 +1,6 @@
 Weddinglist.GuestCardComponent = Ember.Component.extend
   didInsertElement:()->
-    this.$('.guest').addClass('animated tada')
+    this.$('.guest').addClass('animated bounceIn')
   actions:
     deleteGuest:(id) ->
       controller = Weddinglist.__container__.lookup("controller:guests");

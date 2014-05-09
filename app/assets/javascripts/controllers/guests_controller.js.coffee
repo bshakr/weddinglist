@@ -2,7 +2,8 @@ Weddinglist.GuestsController = Ember.ArrayController.extend
   sortProperties: ['name'],
   sortAscending: true,
   filterInternationals: false,
-  filterChurch: false
+  filterChurch: false,
+  searchTerm: ''
 
   receptionCount:(->
     reception = @filterBy('reception', true)
@@ -36,6 +37,7 @@ Weddinglist.GuestsController = Ember.ArrayController.extend
 
   filteredContent:( ->
     content = @get('arrangedContent')
+    searchTerm = @get('searchTerm')
     filterInternationals = @get('filterInternationals')
     filterChurch = @get('filterChurch')
     filterBassem = @get('filterBassem')
@@ -71,10 +73,16 @@ Weddinglist.GuestsController = Ember.ArrayController.extend
       filteredContent = content.filter((item) ->
         item.get('inviter') == "aymankharrat@hotmail.co.uk"
       )
+    else if searchTerm.length
+      console.log "filtering..."
+      console.log "#{searchTerm}"
+      filteredContent = content.filter((item) ->
+        item.get('name').toLowerCase().indexOf(searchTerm.toLowerCase()) != -1
+      )
     else
       filteredContent = content
     filteredContent
-  ).property('arrangedContent', 'filterInternationals', 'filterChurch', 'filterBassem', 'filterTia', 'filterReda', 'filterMona', 'filterAyman')
+  ).property('arrangedContent', 'filterInternationals', 'filterChurch', 'filterBassem', 'filterTia', 'filterReda', 'filterMona', 'filterAyman', 'searchTerm')
 
   actions:
     filterInternationals: ->
@@ -124,12 +132,18 @@ Weddinglist.GuestsController = Ember.ArrayController.extend
       @set('filterInternationals', false)
       @set('filterChurch', false)
       @set('filterBassem', false)
+      @set('filterAyman', false)
+      @set('filterReda', false)
+      @set('filterTia', false)
+      @set('filterBassem', false)
+      @set('filterMona', false)
 
     deleteGuest: (id)->
       deletePromise = @store.find('guest', id)
       deletePromise.then (guest)=>
         guest.deleteRecord()
         guest.save()
+
     addGuest: ->
       newGuest = String(@get('newGuest'))
       guestsNo = Number(@get('guests'))
