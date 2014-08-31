@@ -46,8 +46,35 @@
     margin-bottom: 4px;
   }
 }
-
-
+.rsvp {
+  position: absolute;
+  top: 18px;
+  left: -22px;
+  width: 18px;
+  height: 30px;
+  background: $red;
+  border-top-left-radius: 4px;
+  border-bottom-left-radius: 4px;
+  background: $light-grey;
+  font-size: 12px;
+  text-align: center;
+  cursor: pointer;
+  @include transition (all 200ms ease-in-out);
+  .fa{
+    position: relative;
+    top:5px;
+    left: 2px;
+  }
+  &:hover {
+      color: $light-grey;
+      background: $blue;
+    }
+  &.reception {
+    &:hover {
+      background: $turquoise;
+    }
+  }
+}
 .avatar {
   display: inline-block;
   width: 42px;
@@ -95,11 +122,7 @@
     font-weight:300;
     color: $dark-grey;
     min-height: 62px;
-
-    -webkit-border-image: -webkit-gradient(linear, left top, left bottom, from($light-blue), to($blue));
-    border-image-outset: 0px;
-    border-image-width: 100% 0% 0% 4px;
-    border-image-repeat: stretch;
+    border-left: 4px solid $blue;
     transition: all 100ms ease-in;
 
     &:hover{
@@ -128,7 +151,6 @@
   }
   .guest.reception{
     border-left: 4px solid $turquoise;
-    -webkit-border-image: -webkit-gradient(linear, left top, left bottom, from($turquoise), to($dark-turquoise));
     border-image-outset: 0px;
     border-image-width:100% 0% 0% 4px;
     border-image-repeat: stretch;
@@ -153,8 +175,8 @@
       .international{
         height:10px;
         width:10px;
-        bottom:7px;
-        right:7px;
+        bottom:3px;
+        right:3px;
       }
     }
   }
