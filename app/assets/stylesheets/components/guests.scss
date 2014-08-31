@@ -82,7 +82,7 @@
   .guest {
     position: relative;
     padding-top:6px;
-    padding-bottom:2px;
+    padding-bottom:4px;
     padding-left:8px;
     background: $light-grey;
     min-height: 50px;
@@ -90,15 +90,15 @@
     border-radius: 2px;
     border-top-left-radius: 0px;
     border-bottom-left-radius: 0px;
-    margin-bottom:10px;
+    margin-bottom:15px;
     font-size: 18px;
     font-weight:300;
     color: $dark-grey;
-    min-height: 82px;
+    min-height: 62px;
 
     -webkit-border-image: -webkit-gradient(linear, left top, left bottom, from($light-blue), to($blue));
     border-image-outset: 0px;
-    border-image-width:100% 0% 0% 4px;
+    border-image-width: 100% 0% 0% 4px;
     border-image-repeat: stretch;
     transition: all 100ms ease-in;
 
@@ -112,7 +112,7 @@
       min-height: 124px;
     }
     .number-of-guests {
-      font-size: 24px;
+      font-size: 16px;
       font-weight: 200;
     }
     .name {
@@ -146,8 +146,8 @@
       border-radius:5px;
       background: $red;
       position:absolute;
-      bottom:8px;
-      right:8px;
+      bottom:4px;
+      right:4px;
     }
     &:hover{
       .international{
