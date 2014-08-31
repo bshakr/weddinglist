@@ -1,6 +1,6 @@
 .new-invitation {
   background: $light-grey;
-  padding:15px;
+  padding: 15px;
   padding-right:100px;
   border-left: 8px solid $turquoise;
   -webkit-border-image: -webkit-gradient(linear, left top, left bottom, from($turquoise), to($light-blue));
@@ -48,7 +48,7 @@
 }
 
 
-.avatar{
+.avatar {
   display: inline-block;
   width: 42px;
   height: 42px;
@@ -58,19 +58,19 @@
   background: url(image_path('rappin.jpeg'));
   background-size:100%;
 }
-.avatar.mona{
+.avatar.mona {
   background: url(image_path('mona.jpg'));
   background-size:100%;
 }
-.avatar.reda-mona{
+.avatar.reda-mona {
   background: url(image_path('reda-mona.jpg'));
   background-size:100%;
 }
-.avatar.tia{
+.avatar.tia {
   background: url(image_path('tia.jpg'));
   background-size:100%;
 }
-.avatar.bassem{
+.avatar.bassem {
   background: url(image_path('bassem.jpg'));
   background-size:100%;
 }
@@ -81,16 +81,16 @@
 .guests {
   .guest {
     position: relative;
-    padding-top:8px;
-    padding-bottom:8px;
+    padding-top:6px;
+    padding-bottom:2px;
     padding-left:8px;
     background: $light-grey;
-    min-height: 60px;
+    min-height: 50px;
     border-left: 4px solid $blue;
     border-radius: 2px;
     border-top-left-radius: 0px;
     border-bottom-left-radius: 0px;
-    margin-bottom:20px;
+    margin-bottom:10px;
     font-size: 18px;
     font-weight:300;
     color: $dark-grey;
