@@ -1,5 +1,6 @@
 class GuestsController < ApplicationController
   respond_to :json
+
   before_filter :require_auth
   skip_before_filter :verify_authenticity_token
 
@@ -16,6 +17,7 @@ class GuestsController < ApplicationController
     @guest.destroy
     head :no_content
   end
+
   private
 
   def guest_params
