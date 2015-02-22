@@ -39,10 +39,10 @@ GEM
       thread_safe (~> 0.3, >= 0.3.4)
       tzinfo (~> 1.1)
     arel (6.0.0)
-    barber (0.4.2)
+    barber (0.6.0)
       ember-source
       execjs
-      handlebars-source
+      handlebars-source (>= 1.0.0.rc.4)
     bcrypt-ruby (3.1.2)
     bourbon (3.2.3)
       sass (~> 3.2)
@@ -55,9 +55,9 @@ GEM
       coffee-script-source
       execjs
     coffee-script-source (1.9.1)
-    ember-data-source (1.0.0.beta.9)
-      ember-source
-    ember-rails (0.15.0)
+    ember-data-source (1.0.0.beta.15)
+      ember-source (~> 1.8)
+    ember-rails (0.15.1)
       active_model_serializers
       barber (>= 0.4.1)
       ember-data-source (>= 1.0.0.beta.5)
@@ -66,10 +66,10 @@ GEM
       handlebars-source (> 1.0.0)
       jquery-rails (>= 1.0.17)
       railties (>= 3.1)
-    ember-source (1.7.0)
+    ember-source (1.8.1)
       handlebars-source (~> 1.0)
     erubis (2.7.0)
-    execjs (2.0.2)
+    execjs (2.3.0)
     faraday (0.8.9)
       multipart-post (~> 1.2.0)
     globalid (0.3.3)
@@ -144,6 +144,8 @@ GEM
     rake (10.4.2)
     rdoc (4.1.1)
       json (~> 1.4)
+    responders (2.1.0)
+      railties (>= 4.2.0, < 5)
     sass (3.2.14)
     sass-rails (5.0.1)
       railties (>= 4.0.0, < 5.0)
@@ -184,14 +186,15 @@ DEPENDENCIES
   active_model_serializers (~> 0.9.3)
   bourbon
   coffee-rails (~> 4.1.0)
-  ember-data-source (~> 1.0.0.beta.9)
+  ember-data-source (~> 1.0.0.beta.15)
   ember-rails (~> 0.15.0)
-  ember-source (~> 1.7.0)
+  ember-source (~> 1.8.0)
   jbuilder (~> 1.2)
   jquery-rails (~> 4.0.3)
   pg (~> 0.18.1)
   rails (= 4.2.0)
   rails_12factor
+  responders (~> 2.0)
   sass-rails (~> 5.0.1)
   sdoc
   sorcery (~> 0.8.5)
